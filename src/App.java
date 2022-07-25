@@ -6,11 +6,15 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         //Abrir conexão HTTP (fazer um get) com o endereço da API e guardar a resposta dentro de uma string (buscar os top 250 filmes)
+
         //String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java/api/TopMovies.json";
         //ExtratorDeConteudo extrator = new ExtratorDeConteudoDoIMDB();
 
-        String url = "https://api.mocki.io/v2/549a5d8b/NASA-APOD";
-        ExtratorDeConteudo extrator = new ExtratorDeConteudoDaNasa();
+        //String url = "https://api.mocki.io/v2/549a5d8b/NASA-APOD";
+        //ExtratorDeConteudo extrator = new ExtratorDeConteudoDaNasa();
+
+        String url = "http://localhost:8080/linguagens";
+        ExtratorDeConteudo extrator = new ExtratorDeConteudoDoIMDB();
 
         var http = new ClienteHttp();
         String json = http.buscaDados(url);
@@ -22,6 +26,7 @@ public class App {
 
         for (int i = 0; i < 3; i++){
             Conteudo conteudo = conteudos.get(i);
+            teste
 
             InputStream inputStream = new URL(conteudo.getUrlImagem()).openStream();
             String nomeArquivo = "saida/" + conteudo.getTitulo() + ".png";
