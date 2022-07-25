@@ -26,7 +26,6 @@ public class App {
 
         for (int i = 0; i < 3; i++){
             Conteudo conteudo = conteudos.get(i);
-            teste
 
             InputStream inputStream = new URL(conteudo.getUrlImagem()).openStream();
             String nomeArquivo = "saida/" + conteudo.getTitulo() + ".png";
